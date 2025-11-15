@@ -1,6 +1,6 @@
 import sys
 
-BUILTINS = {"exit"}
+BUILTINS = {"exit", "echo"}
 
 def run_builtin(args):
     cmd = args[0]
@@ -10,6 +10,10 @@ def run_builtin(args):
         else:
             code = 0
         sys.exit(code)
+    elif cmd == "echo":
+        for i in range(1, len(args)):
+            print(args[i], end=" ")
+        print()
 
 def main():
     while True:
