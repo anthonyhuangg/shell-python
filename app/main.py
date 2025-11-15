@@ -8,7 +8,7 @@ def main():
     command = input()
     
     if not check_valid_command(command):
-        sys.stdout.write(f"{command}: command not found")
+        print(f"{command}: command not found")
 
     pass
 
