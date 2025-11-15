@@ -1,10 +1,16 @@
 import sys
 
+def check_valid_command(command):
+    return False
 
 def main():
     sys.stdout.write("$ ")
-    pass
+    command = input()
+    
+    if not check_valid_command(command):
+        sys.stdout.write(f"{command}: command not found")
 
+    pass
 
 if __name__ == "__main__":
     main()
