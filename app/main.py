@@ -1,6 +1,6 @@
 import sys
 
-BUILTINS = {"exit", "echo"}
+BUILTINS = {"exit", "echo", "type"}
 
 def run_builtin(args):
     cmd = args[0]
@@ -14,6 +14,12 @@ def run_builtin(args):
         for i in range(1, len(args)):
             print(args[i], end=" ")
         print()
+    elif cmd == "type":
+        target = args[1]
+        if target in BUILTINS:
+            print(f"{target} is a shell builtin")
+        else:
+            print(f"{target}: not found")
 
 def main():
     while True:
